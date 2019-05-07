@@ -1,22 +1,12 @@
 <template>
-  <div class="logzone">
-    <div id="navbarBasicExample" class="navbar-menu">
-      <div class="navbar-start"></div>
-
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-                        <router-link to="/TheConnexion">
-            <a class="button is-primary is-outlined">Connexion</a>
-            </router-link>
-            <router-link to="/TheInscription">
-              <a class="button is-primary">
-                <strong>Inscription</strong>
-              </a>
-            </router-link>
-          </div>
-        </div>
-      </div>
+  <div class="navbar-item">
+    <div class="buttons">
+      <router-link to="/TheConnexion">
+        <a class="button is-primary is-outlined">Connexion</a>
+      </router-link>
+      <router-link to="/TheInscription">
+        <a class="button is-primary">Inscription</a>
+      </router-link>
     </div>
   </div>
 </template>

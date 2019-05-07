@@ -1,33 +1,28 @@
 <template>
-  <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-      <a class="navbar-item" href>
-        <h1 class="title is-2 logo">Segfault</h1>
-      </a>
+  <nav class="navbar columns s-multiline" role="navigation" aria-label="main navigation">
+    <a class="navbar-item is-one-quarter" href>
+      <h1 class="title is-2 logo">Segfault</h1>
+    </a>
 
-      <a
-        role="button"
-        class="navbar-burger burger"
-        aria-label="menu"
-        aria-expanded="false"
-        data-target="navbarBasicExample"
-      >
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
+    <a
+      role="button"
+      class="navbar-burger burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
 
-      <div class="columns">
-  <div class ="column  is-four-fifths">
+    <div class="column">
       <NavSearchbar/>
-  </div>
-  <div class="column is-narrow">
-    <NavLogZone/>
-  </div>
+    </div>
+    <div class="navbar-end">
+      <NavLogZone/>
     </div>
   </nav>
-
 </template>
 
 <script>
