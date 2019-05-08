@@ -343,6 +343,7 @@ export default {
       } else {
           /*enregistrement dans la db*/
       this.RegistrationFaillure =null;
+      this.$router.push({name: 'home'});
       return;
       }
    }
