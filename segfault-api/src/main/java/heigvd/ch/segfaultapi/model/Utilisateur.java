@@ -4,14 +4,18 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
 
 @Table(name = "Utilisateur")
-public class Utilisateur {
+public class Utilisateur  implements Serializable, UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -56,6 +60,50 @@ public class Utilisateur {
     @JoinColumn(name = "role_utilisateur", referencedColumnName = "role_id", insertable= false, updatable=false)
     private Role role;
 
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getPassword() {
+        return motDePasse;
+    }
+
+    @Override
+    public String getUsername() {
+        return nomUtilisateur;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
+
+    public void setUsername(String username) {
+        this.nomUtilisateur = username;
+    }
+
+    public void setPassword(String password) {
+        this.motDePasse = password;
+    }
+
+
     /*
     @OneToMany(mappedBy = "Utilisateur")
     private Set<Vote> voteSet;
@@ -72,6 +120,5 @@ public class Utilisateur {
     private Set<Message> messageSet;
 */
 
-    public Utilisateur () {
-    }
+
 }

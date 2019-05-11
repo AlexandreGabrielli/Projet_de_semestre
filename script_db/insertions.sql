@@ -42,6 +42,7 @@ Values
 
 INSERT into utilisateur(nom_utilisateur, mail_utilisateur, mot_de_passe, role_utilisateur)
 Values
+	('admin', 'admin.admin@heig-vd.ch', 'admin', 4),
     /*md5('root1234') = e8bc632a8955b067e4f57824d5954690*/
   ('Admin', 'admin.administrateur@heig-vd.ch', 'aabb2100033f0352fe7458e412495148', 4),
     /*md5('bestpassword123454') = e8bc632a8955b067e4f57824d5954690*/
